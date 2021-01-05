@@ -1,59 +1,44 @@
 body{
-    background-image: url("Picture6.jpg");
-    /* background-position: right top; */
+    background-image: url('Picture6.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    text-align: center;
-
 }
 h2{
-    font-size: 65px;
+    margin-top: 50px;
+    font-size: 4vw;
+    color: bisque;
     text-align: center;
-    color: beige;
-    font-family: "Comic Sans MS";
 }
-.div1{
-    border-style: solid;
-    border-radius: 20px;  
-    margin-left: 95px;
-    margin-top: 170px;
-    /* margin-right: 800px;
-    margin-left: 50px; */
-    width: 20%;
-    padding-top: 55px;
-    height:100px;
+.myflex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
     text-align: center;
-    color: #fcd9f6;
+    margin: auto;
+    margin-top: 150px;
+}
+.myflex > div{
     background-color:rgba(41, 41, 80, 0.4) ;
-      
-} 
-#d1{
-    position: absolute;
-    top:139px;  
-    left: 500px;
-    background-color:rgba(42, 42, 85, 0.3)
-} 
- #d2{
-    position: absolute;
-    top:139px; 
-    left:1000px;
- }
- a{
+    width: 25%;
+    overflow: hidden; 
+    height: 100px;
+    margin: 50px;
+    border: 2px;
+    border-color: #fcd9f6 ;
+    border-style: solid;
+    border-radius: 20px;
+    padding-top: 55px;
+    text-align: center;
+}
+.myflex>div:hover{
+    background-color: rgb(22, 22, 54);
+    cursor: pointer;
+    border: 3px;
+}
+a{
     text-decoration: none;
     color: #fcd9f6;
     font-size: 26px;
     font-family: "Candara";
  }
- .div1:hover{
-    background-color: rgb(22, 22, 54);
-    cursor: pointer;
-    border: 5px;
-    /* box-shadow: 5px 10px #1b1936; */
-   /* font-size: 31px; */
- }
-#d1:hover{
-    background-color: rgb(22, 22, 54);
-    cursor: pointer;
-    border: 5px;
-}
- 
