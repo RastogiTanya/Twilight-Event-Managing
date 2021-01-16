@@ -1,0 +1,45 @@
+html{
+    background: url('Picture6.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+h2{
+    font-size: 4.3vw;
+    color: bisque;
+    text-align: center;
+    font-family: 'Comic Sans MS';
+}
+.myflex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    text-align: center;
+    margin-top: 50px;
+}
+.myflex>div{
+    background-color:rgba(41, 41, 80, 0.4) ;
+    width: 25%;
+    height: 100px;
+    overflow: hidden;
+    margin: 40px;
+    border: 2px;
+    border-color: #fcd9f6 ;
+    border-style: solid;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+}
+.myflex>div:hover{
+    background-color: rgb(22, 22, 54);
+    cursor: pointer;
+    border: 3px;
+}
+a{
+    text-decoration: none;
+    color: #fcd9f6;
+    font-family: "Candara";
+    font-size: 1vw;
+ }

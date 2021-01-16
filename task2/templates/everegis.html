@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/prac_style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="head">Event Registration</div>
+    <form class="event_regis_form" method="POST" action="/everegis">
+		{% csrf_token %}
+    <table >
+    	<tr>
+    		<td><label for="eventname">Event Name </label></td>
+    		<td><input name="eventname" id="ename" placeholder="name of event"></td>
+    	</tr>
+
+    	<tr>
+    		<td><label for = "description">Description    </label></td>
+    		<td><textarea rows = "2" cols = "20" name = "description"  placeholder="description here..."></textarea></td>
+    	</tr>
+
+    	<tr>
+    		<td> <label for="location">Location    </label></td>
+    		<td><input  type="text" name="location" id="loc" placeholder="enter the location"></td>
+    	</tr>
+    	<tr>
+    		<td><label for="fromdate">From</label></td>
+    		<td> <input  type="datetime-local" name="fromdate" id="date" ></td>
+    	</tr>
+    	<tr>
+    		<td><label for="todatee"> To    </label></td>
+    		<td><input  type="datetime-local" name="todatee" id="todate" ></td>
+    	</tr>
+    	<tr>
+    		<td><label for="deadline">Registration deadline</label></td>
+    		<td><input  type="datetime-local" name="deadline" id="regdate" ></td>
+    	</tr>
+    	<tr>
+    		<td> <label for="hostmail">Host-email    </label></td>
+    		<td><input  type="email" id="mail" name="hostmail" placeholder="enter the e-mail"></td>
+    	</tr>
+    	<tr>
+    		<td><label for="hostPassword">Host-password   </label></td>
+    		<td><input  type="text" id="pswrd" name="hostPassword" placeholder="enter the password"></td>
+    	</tr>
+
+    	<tr>
+    		<th colspan=2><button name="submit" id="submit" class="submit" value="Submit" type="submit">Submit</button></th>
+    	</tr>
+    </table>
+    </form>
+	<!--
+    <div >
+
+        <form class="event_regis_form" method="POST" action="/everegis">
+
+            <div class="eventname">
+                <label for="eventname">Event Name: </label>
+                <input name="eventname" id="ename" placeholder="name of event">
+            </div>
+
+            <div class="descrip">
+            <label for = "description">Description:    </label>
+            <textarea rows = "2" cols = "20" name = "description" id="descrip" placeholder="description here..."></textarea>
+            </div>
+
+            <div class="location">
+            <label for="location">Location:    </label>
+            <input  type="text" name="location" id="loc" placeholder="enter the location">
+            </div>
+
+            <div class="from">
+            <label for="fromdate">From:</label>
+            <input  type="datetime-local" name="fromdate" id="date" >
+            </div>
+
+            <div class="to">
+            <label for="todatee"> To :   </label>
+            <input  type="datetime-local" name="todatee" id="todate" >
+            </div>
+
+            <div class="regis">
+            <label for="deadline">Registration deadline:</label>
+            <input  type="datetime-local" name="deadline" id="regdate" >
+            </div>
+
+            <div class="hostmail">
+            <label for="hostmail">Host-email:    </label>
+            <input  type="email" id="mail" name="hostmail" placeholder="enter the e-mail">
+            </div>
+
+            <div class="hostpwd">
+            <label for="hostPassword">Host-password:    </label>
+            <input  type="text" id="pswrd" name="hostPassword" placeholder="enter the password">
+            </div>
+
+            <div class="form-sub">
+            <button name="submit" id="submit" class="submit" value="Submit" type="submit">Submit</button>
+            </div>
+        </form>
+        -->
+        </div>
+        <div class="link"><a href="/homepage"> Back to homepage </a> </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+html{
+    background: url('im22.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.list{
+    font-size: 1.3vw;
+    margin-top: 30px;
+    width: 50%;
+    margin-left: 400px;
+    color: antiquewhite;
+    text-align: center;
+}
+.heading{
+    font-family: 'Trebuchet MS';
+    margin-top: 50px;
+    margin-bottom: 70px;
+    text-align: center;
+    color: bisque;
+    font-size: 3.5vw;
+    box-shadow: 20px;
+    letter-spacing: 2px;
+}
+.col1,.col2,.col3,.col4,.col5,.col6{
+    margin-top: 30px;
+    font-size: 1.5vw;
+    text-align: center;
+    color: bisque;
+    font-family: "candara";
+
+}
+.submit{
+    text-align: center;
+    background-color: bisque;
+    width: auto;
+    font-size: 24px;
+    padding: 16px 17px;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    cursor: pointer;
+    margin-left: 100px;
+    cursor: pointer;
+
+}
+.sub{
+    margin-top: 40px;
+    text-align: center;
+    /* border: 2px solid white; */
+}
+.submit:hover{
+    color:black;
+      background: rgb(252, 190, 114);
+ }
+.link{
+    font-size: 1.3vw;
+    margin-top: 30px;
+    color: red;
+    margin-left:730px;
+}
+a{
+  color: bisque;
+}

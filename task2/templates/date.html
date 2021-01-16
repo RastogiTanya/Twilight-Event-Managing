@@ -1,0 +1,13 @@
+html>
+<head>
+    <title> HWWEEWW</title>
+</head>
+<body>
+<form method="post" action="/dates">
+    {% csrf_token %}
+    <label for="dates"> ename:</label>
+    <input type="datetime-local" name="dates">
+    <button type="submit">submit</button>
+</form>
+</body>
+</html>

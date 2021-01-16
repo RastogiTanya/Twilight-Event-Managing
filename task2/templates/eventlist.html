@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participant Registration</title>
+</head>
+
+<body>
+    <div class="list">
+        <ul>
+            {% for eventregi in eventregis %}
+                <li> Event name: {{eventregi.eventname}}</li>
+                <li>Description: {{eventregi.description}}</li>
+                <li>From date: {{eventregi.fromdate}}</li>
+                <li>To Date: {{eventregi.todatee}}</li>
+                <li>Registration Deadline:{{eventregi.deadline}}</li>
+                <br>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="heading">Participant Registration</div>
+    <form id="formmi" method="POST" action="">
+        <div class="col1">
+            <label for="yourname">Name:</label>
+            <input type="text" id="yourname" name="Name">
+        </div>
+
+        <div class="col2">
+            <label for="phone">Contact Number:</label>
+            <input type="number" id="phone" name="phone">
+        </div>
+
+        <div class="col3">
+            <label for="email2">Email ID:</label>
+            <input type="email" id="email2" name="email2">
+        </div>
+        <div class="col4">
+            Event :
+            <label for="event1">Sample event 1</label>
+            <input type="radio" id="event1" name="eventType" class="eve">
+            <label for="event2">Sample event 2</label>
+            <input type="radio" id="event2" name="eventType" class="eve">
+            <label for="event3">Sample event 3</label>
+            <input type="radio" id="event3" name="eventType" class="eve">
+            <label for="event4">Sample event 4</label>
+            <input type="radio" id="event4" name="eventType" class="eve">
+        </div>
+
+        <div class="col5">
+            Registration-Type :
+            <label for="individual">individual</label>
+            <input type="radio" id="individual" name="registration" class="er">
+            <label for="group">group</label>
+            <input type="radio" id="group" name="registration" class="er">
+        </div>
+        <div class="col6">
+            <label for="people">Number of people:</label>
+            <input type="number" min="2" id="people" disabled>
+        </div>
+        <div class="sub">
+            <button class="submit" type="submit" id="submit" value="submit">submit</button>
+        </div>
+    </form>
+    <div class="link"><a href="/homepage"> Back to homepage </a> </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="static/java.js"></script>
+
+</body>
+
+</html>
