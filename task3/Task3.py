@@ -76,7 +76,7 @@ while (True):
 
     print(d)
 
-    want = input("\nWhat do you wish to do?\n1) Store\n2) Retrieve\n\nYour Choice: ")
+    want = input("\nWhat do you wish to do?\n1) Store\n2) Retrieve\n3) Exit \n\nYour Choice: ")
     want = want.lower()
 
     if (want == "store"):
@@ -92,6 +92,8 @@ while (True):
 
         if (choice((str(input("\nDo you want to access the data?(Y/N): "))).lower()) == "n"):
             break
-
+    elif(want=="exit"):
+        break
     else:
         print("Invalid input. Please enter your choice again...\n")
+    print("program finished...")
