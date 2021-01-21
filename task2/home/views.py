@@ -3,6 +3,10 @@ from .models import Everegis
 from woc.settings import EMAIL_HOST_USER
 from django.core.mail import send_mail
 from django.contrib import messages
+import datetime
+import pytz
+from django.utils import timezone
+
 
 # Create your views here.
 class Abc():
@@ -38,9 +42,16 @@ class Abc():
         else:
             return render(request, 'everegis.html')
 
-    def eventlist(request):   
+    def eventlist(request):
+        b=[]
+        utc=pytz.UTC
+        now = datetime.datetime.now()
         eventregis = Everegis.objects.all()
-        return render(request, 'eventlist.html', {'eventregis': eventregis})
+        for event in eventregis:
+            deadline= event.deadline
+            if deadline.replace(tzinfo=utc) > now.replace(tzinfo=utc):
+                b.append(event)
+        return render(request, 'eventlist.html', {'eventregis': b})
 
     def index(request):
         products = Product.objects.all()
