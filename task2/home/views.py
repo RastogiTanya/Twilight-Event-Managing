@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse
 from .models import Everegis
 from woc.settings import EMAIL_HOST_USER
 from django.core.mail import send_mail
-
+from django.contrib import messages
 
 # Create your views here.
 class Abc():
@@ -28,6 +28,7 @@ class Abc():
             ins = Everegis(eventname=eventname, description=description, location=location, fromdate=fromdate, todatee=todatee,deadline=deadline,
                            hostmail=hostmail, hostPassword=hostPassword)
             ins.save()
+            messages.success(request, 'Your form has been submitted')
             xcount = Abc.func()
             subject = ' Event registration is successful  '
             message = f'Your event is registererd successfully \n\n Event is : {eventname}  \n\n Event ID is {xcount} \n\n Thanks'
@@ -37,7 +38,7 @@ class Abc():
         else:
             return render(request, 'everegis.html')
 
-    def eventlist(request):
+    def eventlist(request):   
         eventregis = Everegis.objects.all()
         return render(request, 'eventlist.html', {'eventregis': eventregis})
 

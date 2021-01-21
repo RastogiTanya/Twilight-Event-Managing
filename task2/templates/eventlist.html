@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block body %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,8 +23,9 @@
             {% endfor %}
         </ul>
     </div>
+
     <div class="heading">Participant Registration</div>
-    <form id="formmi" method="POST" action="">
+    <form id="formmi" method="POST" action="/eventlist">
         <div class="col1">
             <label for="yourname">Name:</label>
             <input type="text" id="yourname" name="Name">
@@ -69,5 +72,5 @@
     <script src="static/java.js"></script>
 
 </body>
-
 </html>
+{% endblock body %}

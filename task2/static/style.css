@@ -7,12 +7,15 @@ html{
 }
 .list{
     font-size: 1.3vw;
-    margin-top: 30px;
+    margin-top: 70px;
     width: 50%;
     margin-left: 400px;
     color: antiquewhite;
     text-align: center;
 }
+ul {
+    list-style-type: none;
+  }
 .heading{
     font-family: 'Trebuchet MS';
     margin-top: 50px;
@@ -63,6 +66,7 @@ html{
     margin-top: 30px;
     color: red;
     margin-left:730px;
+    margin-bottom: 20px;
 }
 a{
   color: bisque;

@@ -1,49 +1,51 @@
+{% extends 'base.html' %}
+{% block body %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/prac_style.css">
+    <link rel="stylesheet" href="static/styling.css">
     <title>Document</title>
 </head>
-<body>
+<body >
     <div class="head">Event Registration</div>
     <form class="event_regis_form" method="POST" action="/everegis">
 		{% csrf_token %}
     <table >
     	<tr>
     		<td><label for="eventname">Event Name </label></td>
-    		<td><input name="eventname" id="ename" placeholder="name of event"></td>
+    		<td><input name="eventname" id="eventname" placeholder="name of event"></td>
     	</tr>
 
     	<tr>
     		<td><label for = "description">Description    </label></td>
-    		<td><textarea rows = "2" cols = "20" name = "description"  placeholder="description here..."></textarea></td>
+    		<td><textarea rows = "2" cols = "20" name = "description" id="description"  placeholder="description here..."></textarea></td>
     	</tr>
 
     	<tr>
     		<td> <label for="location">Location    </label></td>
-    		<td><input  type="text" name="location" id="loc" placeholder="enter the location"></td>
+    		<td><input  type="text" name="location" id="location" placeholder="enter the location"></td>
     	</tr>
     	<tr>
     		<td><label for="fromdate">From</label></td>
-    		<td> <input  type="datetime-local" name="fromdate" id="date" ></td>
+    		<td> <input  type="datetime-local" name="fromdate" id="fromdate" ></td>
     	</tr>
     	<tr>
     		<td><label for="todatee"> To    </label></td>
-    		<td><input  type="datetime-local" name="todatee" id="todate" ></td>
+    		<td><input  type="datetime-local" name="todatee" id="todatee" ></td>
     	</tr>
     	<tr>
     		<td><label for="deadline">Registration deadline</label></td>
-    		<td><input  type="datetime-local" name="deadline" id="regdate" ></td>
+    		<td><input  type="datetime-local" name="deadline" id="deadline" ></td>
     	</tr>
     	<tr>
     		<td> <label for="hostmail">Host-email    </label></td>
-    		<td><input  type="email" id="mail" name="hostmail" placeholder="enter the e-mail"></td>
+    		<td><input  type="email" id="hostmail" name="hostmail" placeholder="enter the e-mail"></td>
     	</tr>
     	<tr>
     		<td><label for="hostPassword">Host-password   </label></td>
-    		<td><input  type="text" id="pswrd" name="hostPassword" placeholder="enter the password"></td>
+    		<td><input  type="text" id="hostPassword" name="hostPassword" placeholder="enter the password"></td>
     	</tr>
 
     	<tr>
@@ -105,3 +107,4 @@
         <div class="link"><a href="/homepage"> Back to homepage </a> </div>
 </body>
 </html>
+{% endblock body %}

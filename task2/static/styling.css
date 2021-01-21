@@ -1,0 +1,99 @@
+html,body{
+    background: url('ch1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+.head{
+    padding-top: 40px;
+    letter-spacing: 2px;
+    margin: 30px;
+    font-family: 'Comic Sans MS';
+    text-align: center;
+    color: bisque;
+    font-size: 3.4vw;
+    
+
+}
+.eventname,.descrip,.location,.from,.to,.hostmail,.regis,.hostpwd{
+
+    margin-top: 19px;
+    font-size: 1.7vw;
+     letter-spacing: 3px;
+     letter-spacing: 2px;
+    text-align: center;
+    font-family: "candara";
+    color: rgb(245, 196, 237);
+    /* text-align: center; */
+}
+
+.submit{
+    margin-top:30px;
+    width: 200px;
+    background-color: bisque;
+    color: #121b33;
+    padding: 16px 17px;
+    font-size: 22px;
+    border: none;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    cursor: pointer;
+    text-align : center;
+    box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+    -moz-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+    -webkit-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+    -o-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+    -ms-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+ }
+ .form-sub{
+    text-align: center;
+ }
+ .submit:hover{
+     color: azure;
+      background: #121b33;
+ }
+.link{
+        margin-top: 20px;
+        /* border: 2px solid white; */
+        text-align: center;
+        margin-bottom: 20px;
+}
+.link a{
+   /* padding-top: 80px; */
+    font-size: 22px;
+    /* margin:557px;
+    margin-top: 50px; */
+    color: bisque;
+}
+
+
+table{
+    margin : auto;
+    font-size: 1.7vw;
+    letter-spacing: 3px;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: "candara";
+    color: rgb(245, 196, 237);
+    /* text-align: center; */
+}
+
+input,textarea{
+  width: 90%;
+  padding: 8px 5px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: content-box;
+}
+td{
+	padding: 2px 3px;
+	text-align : left;
+
+}
