@@ -24,7 +24,7 @@ from django.contrib.messages import constants as messages
 SECRET_KEY = 'w!+a9_8(43b*_e^#=8dag-gm3^=1ufee1pnt)h+dbkmc$ydjgs'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -103,7 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'managingevent01@gmail.com'
-EMAIL_HOST_PASSWORD = 'event13jan'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
