@@ -21,13 +21,17 @@ from django.contrib.messages import constants as messages
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'w!+a9_8(43b*_e^#=8dag-gm3^=1ufee1pnt)h+dbkmc$ydjgs'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 ALLOWED_HOSTS = []
 
+TWILIO_ACCOUNT_SID =''
+TWILIO_AUTH_TOKEN = ''
+TWILIO_NUMBER = ""
+DJANGO_TWILIO_FORGERY_PROTECTION = False
 
 # Application definition
 

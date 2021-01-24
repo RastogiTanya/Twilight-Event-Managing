@@ -26,9 +26,10 @@
 
     <div class="heading">Participant Registration</div>
     <form id="formmi" method="POST" action="/eventlist">
+    {% csrf_token %}
         <div class="col1">
-            <label for="yourname">Name:</label>
-            <input type="text" id="yourname" name="Name">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
         </div>
 
         <div class="col2">
@@ -37,31 +38,27 @@
         </div>
 
         <div class="col3">
-            <label for="email2">Email ID:</label>
-            <input type="email" id="email2" name="email2">
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email">
         </div>
         <div class="col4">
             Event :
-            <label for="event1">Sample event 1</label>
-            <input type="radio" id="event1" name="eventType" class="eve">
-            <label for="event2">Sample event 2</label>
-            <input type="radio" id="event2" name="eventType" class="eve">
-            <label for="event3">Sample event 3</label>
-            <input type="radio" id="event3" name="eventType" class="eve">
-            <label for="event4">Sample event 4</label>
-            <input type="radio" id="event4" name="eventType" class="eve">
+            {% for eventregi in eventregis %}
+            <label for="{{eventregi.eventname}}">{{eventregi.eventname}}</label>
+            <input type="radio" id="{{eventregi.eventname}}" name="eventType" class="eve" value="{{eventregi.id}}">
+             {% endfor %}
         </div>
 
         <div class="col5">
             Registration-Type :
             <label for="individual">individual</label>
-            <input type="radio" id="individual" name="registration" class="er">
+            <input type="radio" id="individual" name="registration" class="er" value="individual">
             <label for="group">group</label>
-            <input type="radio" id="group" name="registration" class="er">
+            <input type="radio" id="group" name="registration" class="er" value="group">
         </div>
         <div class="col6">
             <label for="people">Number of people:</label>
-            <input type="number" min="2" id="people" disabled>
+            <input type="number" min="2" name="people" id="people" disabled>
         </div>
         <div class="sub">
             <button class="submit" type="submit" id="submit" value="submit">submit</button>
