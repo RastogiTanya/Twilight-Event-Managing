@@ -29,17 +29,17 @@
     {% csrf_token %}
         <div class="col1">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" required>
         </div>
 
         <div class="col2">
             <label for="phone">Contact Number:</label>
-            <input type="number" id="phone" name="phone">
+            <input type="number" id="phone" name="phone" required>
         </div>
 
         <div class="col3">
             <label for="email">Email ID:</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" required>
         </div>
         <div class="col4">
             Event :
