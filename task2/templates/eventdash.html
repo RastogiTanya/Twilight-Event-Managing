@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/eventdash.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="topic">Event Dashboard</div>
+    <form class="event_regis_form" method="POST" action="/eventdash">
+    {% csrf_token %}
+    <table class="mail">
+        <tr>
+            <td><label for="eveid"> Event-ID : </label> </td>
+            <td><input type="number" id="eveid" name="eventid" required></td>
+        </tr>
+        <tr>
+        <div class="pswrd">
+            <td><label for="paswrd">Host-Password : </label></td>
+        <td><input type="password" id="paswrd" name="paswrd" placeholder="enter the password" required></td>
+        </tr>
+        <tr>
+    		<th colspan=2><button name="submit" id="submit" class="submit" value="Submit" type="submit">Submit</button></th>
+        </tr>   
+    </table>
+    </form>
+    <br>
+    <br>
+    <div class="list">
+        {% if participants %}
+
+        <table class="newtable" border=1>
+        
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Participant type:</th>
+            <th>Number of people</th>
+        </tr>
+            {% for p in participants %}
+            <tr>
+              <td>{{p.name}}</td>
+              <td>{{p.phone}}</td>  
+              <td>{{p.email}}</td>
+              <td>{{p.regtype}}</td> 
+              <td>{{p.people}}</td>
+            </tr>
+            {% endfor %}
+            
+        </table>
+        {% endif %}
+        
+    </div>
+    <div class="link"><a href="/homepage"> Back to homepage </a> </div>
+</body>
+</html>
+{% endblock body %}

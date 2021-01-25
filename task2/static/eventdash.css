@@ -1,36 +1,25 @@
 html,body{
-    background: url('ch1.jpg') no-repeat center center fixed;
+    background: url('3pg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
 }
-.head{
-    padding-top: 40px;
+.topic{
+    font-size: 4vw;
     letter-spacing: 2px;
-    margin: 30px;
-    font-family: 'Comic Sans MS';
+    margin-top: 70px;
+    font-family: "Candara";
+    color: rgb(248, 200, 234);
     text-align: center;
-    color: bisque;
-    font-size: 3.4vw;
+    text-shadow: 0 0 3px #f01414, 0 0 5px #0404f0;
+    margin-bottom: 20px;
 }
-.eventname,.descrip,.location,.from,.to,.hostmail,.regis,.hostpwd{
-    margin-top: 19px;
-    font-size: 1.7vw;
-     letter-spacing: 3px;
-     letter-spacing: 2px;
-    text-align: center;
-    font-family: "candara";
-    color: rgb(245, 196, 237);
-    /* text-align: center; */
-}
-
 .submit{
-    margin-top:30px;
-    width: 200px;
+    margin-top:20px;
+    width: 130px;
     background-color: bisque;
-    color: #121b33;
+    color: #1a2a58;
     padding: 16px 17px;
     font-size: 22px;
     border: none;
@@ -44,7 +33,7 @@ html,body{
     box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
     -moz-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
     -webkit-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
-    -o-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+    -o-box-shadow: 0px 1px 15px 0px rgba(68, 101, 184, 0.7);
     -ms-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
  }
  .form-sub{
@@ -54,32 +43,24 @@ html,body{
      color: azure;
       background: #121b33;
  }
+
 .link{
-        margin-top: 20px;
-        /* border: 2px solid white; */
-        text-align: center;
-        margin-bottom: 20px;
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 .link a{
-   /* padding-top: 80px; */
-    font-size: 22px;
-    /* margin:557px;
-    margin-top: 50px; */
-    color: bisque;
+font-size: 25px;
+color: bisque;
 }
-
-
 table{
     margin : auto;
-    font-size: 1.7vw;
-    letter-spacing: 3px;
+    font-size: 2vw;
     letter-spacing: 2px;
     text-align: center;
     font-family: "candara";
-    color: rgb(245, 196, 237);
-    /* text-align: center; */
+    color: rgb(255, 230, 177);
 }
-
 input,textarea{
   width: 90%;
   padding: 8px 5px;
@@ -92,5 +73,10 @@ input,textarea{
 td{
 	padding: 2px 3px;
 	text-align : left;
-
+}
+.newtable{
+    background-color: rgba(21, 20, 22, 0.8);
+    color: #f3a7e2;
+    width: 100%;
+    font-size: 22px;
 }

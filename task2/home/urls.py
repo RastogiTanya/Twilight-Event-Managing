@@ -5,5 +5,5 @@ urlpatterns = [
     path('homepage', views.Abc.hp),
     path('everegis',views.Abc.everegis),
     path('eventlist', views.Abc.eventlist),
-
+    path('eventdash',views.Abc.eventdash)
 ]

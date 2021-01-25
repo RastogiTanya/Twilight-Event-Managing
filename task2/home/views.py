@@ -12,7 +12,6 @@ from django.utils import timezone
 
 # Create your views here.
 class Abc():
-    count = 0
 
     def hp(request):
         return render(request, "homepage.html")
@@ -66,8 +65,6 @@ class Abc():
             participants = Participants.objects.all()
             for p in participants:
                 check = True
-                print(participant.eventype)
-                print(p.eventype)
                 if (participant.phone == p.phone or participant.name == p.name) and int(participant.eventype) == p.eventype and participant.regtype == p.regtype :  
                     check= False
                     break
@@ -80,8 +77,15 @@ class Abc():
                         endate= eve.todatee
                         loc = eve.location
                         eventname = eve.eventname
-                        print(eventname)
-                message_to_broadcast = f"Thank you {participant.name} for registration \n\n Your participant id is : {participant.id} \n\n Event is : {eventname} \n\n Date of event is : {evedate} to {endate} \n\n Participation type is: {participant.regtype} "
+                        temp = str(evedate).split(' ')
+                        sdate = temp[0]
+                        stime = temp[1].split('+')[0]
+
+                        temp = str(endate).split(' ')
+                        edate = temp[0]
+                        etime = temp[1].split('+')[0]
+
+                message_to_broadcast = f"Thank you {participant.name} for registration \n\n Your participant id is : {participant.id} \n\n Event is : {eventname} \n\n Date of event is : {sdate} - {edate} \n\n Time is :{stime} - {etime} \n\n Participation type is: {participant.regtype} "
                 client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
                 message = client.messages.create(to='+91' + str(participant.phone),from_=settings.TWILIO_NUMBER,body= message_to_broadcast)           
             else:
@@ -89,9 +93,41 @@ class Abc():
         return render(request, 'eventlist.html', {'eventregis': b})
 
 
-    def index(request):
-        products = Product.objects.all()
-        return render(request, 'file.html', {'home': products})
+    def eventdash(request):
+        if request.method=="POST":
+            eveid= request.POST['eventid']
+            password= request.POST['paswrd']
+            participants = Participants.objects.all()
+            eventregis = Everegis.objects.all()
+            flag= 0
+            partici=[]
+            for e in eventregis:
+                if e.id == int(eveid):
+                    if e.hostPassword == password:
+                        flag =1
+                        for p in participants:
+                            if p.eventype==int(eveid):
+                                partici.append(p)  
+                        content={
+                            'participants' : partici
+                        }
+                        break
+                    else:
+                        flag = 2
+            if flag == 1:
+                return render(request,'eventdash.html',content)
+            elif flag == 0:
+                messages.error(request, 'Event id does not exists')
+                return render(request,'eventdash.html')
+            elif flag == 2:
+                messages.error(request, 'Incorrect Password')
+                return render(request,'eventdash.html')
+            else:
+                messages.error(request, 'Incorrect')
+                return render(request,'eventdash.html')
+        else:
+            return render(request,'eventdash.html')
+
 
 
     
