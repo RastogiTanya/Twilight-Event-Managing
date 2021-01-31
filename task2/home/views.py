@@ -28,10 +28,12 @@ class Abc():
             hostPassword = request.POST['hostPassword']
             ins = Everegis(eventname=eventname, description=description, location=location, fromdate=fromdate, todatee=todatee,deadline=deadline,
                            hostmail=hostmail, hostPassword=hostPassword)
+            utc=pytz.UTC
+            now = datetime.datetime.now()
             if fromdate > todatee :
-                messages.success(request, ' Error !! ')
+                messages.success(request, ' From date should be less than todate ')
             elif deadline > fromdate :
-                messages.success(request, 'Error !!')
+                messages.success(request, 'Registration deadline should be less than fromdate!')
             else:
                 ins.save()
                 messages.success(request, 'Your form has been submitted')
@@ -65,7 +67,7 @@ class Abc():
             participants = Participants.objects.all()
             for p in participants:
                 check = True
-                if (participant.phone == p.phone or participant.name == p.name) and int(participant.eventype) == p.eventype and participant.regtype == p.regtype :  
+                if  (participant.phone == p.phone or participant.name == p.name) and int(participant.eventype) == p.eventype and participant.regtype == p.regtype :  
                     check= False
                     break
             if check==True:
@@ -100,6 +102,7 @@ class Abc():
             participants = Participants.objects.all()
             eventregis = Everegis.objects.all()
             flag= 0
+            
             partici=[]
             for e in eventregis:
                 if e.id == int(eveid):
@@ -115,7 +118,11 @@ class Abc():
                     else:
                         flag = 2
             if flag == 1:
-                return render(request,'eventdash.html',content)
+                if not partici:
+                    messages.error(request, 'No participants exists')
+                    return render(request,'eventdash.html')
+                else:
+                    return render(request,'eventdash.html',content)   
             elif flag == 0:
                 messages.error(request, 'Event id does not exists')
                 return render(request,'eventdash.html')

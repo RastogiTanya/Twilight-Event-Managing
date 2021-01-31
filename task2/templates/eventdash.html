@@ -33,9 +33,8 @@
     <br>
     <div class="list">
         {% if participants %}
-
         <table class="newtable" border=1>
-        
+            
         <tr>
             <th>Name</th>
             <th>Phone</th>
@@ -43,6 +42,7 @@
             <th>Participant type:</th>
             <th>Number of people</th>
         </tr>
+        
             {% for p in participants %}
             <tr>
               <td>{{p.name}}</td>
@@ -55,6 +55,7 @@
             
         </table>
         {% endif %}
+        
         
     </div>
     <div class="link"><a href="/homepage"> Back to homepage </a> </div>
